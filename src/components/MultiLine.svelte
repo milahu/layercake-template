@@ -3,30 +3,49 @@
 
 	const { data, xGet, yGet, zGet, xScale, yScale, xRange, yRange, xDomain, yDomain } = getContext('LayerCake');
 
-	$: path = values => {
-		return 'M' + values
+	export let strokeWidth = 3;
+
+	$: path = group => {
+		if (group.values.length == 0) {
+			//console.log('no values in group', group);
+			return '';
+		}
+		return 'M' + group.values
 			.map(d => {
-				return $xGet(d) + ',' + $yGet(d);
+				const xVal = $xGet(d);
+				const yVal = $yGet(d);
+				if (isNaN(xVal) || isNaN(yVal)) return '0,0'; // TODO better
+				return xVal + ',' + yVal;
 			})
 			.join('L');
 	};
 </script>
 
-<g class="line-group">
+
+<!-- broken:
+			stroke="{$zGet(group)}"
+-->
+
+<g class="line-group" style="
+	--stroke-width: {strokeWidth}px;
+">
 	{#each $data as group}
 		<path
 			class='path-line'
-			d='{path(group.values)}'
-			stroke="{$zGet(group)}"
-		></path>
+			d='{path(group)}'
+			stroke="{group.stroke}"
+		>
+			<title>{group.key}</title><!-- tooltip -->
+		</path>
 	{/each}
 </g>
 
 <style>
 	.path-line {
+		stroke-width: var(--stroke-width);
+		stroke: black;
 		fill: none;
 		stroke-linejoin: round;
 		stroke-linecap: round;
-		stroke-width: 3px;
 	}
 </style>

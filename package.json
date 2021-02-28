@@ -1,6 +1,9 @@
 {
-  "name": "layercake-template",
-  "version": "1.0.0",
+  "name": "ncs-analyzer",
+  "description": "interpolation function generator",
+  "version": "0.0.1",
+  "author": "milahu",
+  "license": "CC0-1.0",
   "scripts": {
     "build": "rollup -c",
     "build:ssr": "rollup -c rollup.config-ssr.js",
@@ -13,18 +16,41 @@
     "@rollup/plugin-dsv": "^2.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^6.0.0",
+    "color-convert": "^2.0.1",
+    "d3-scale": "^3.2.3",
     "html-minifier": "^4.0.0",
     "layercake": "^4.0.3",
+    "ncs-color": "^1.0.1",
     "rollup": "^2.38.5",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-execute": "^1.1.1",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "svelte": "^3.32.2"
+    "svelte": "^3.32.2",
+    "svg-pan-zoom": "^3.6.1"
   },
   "dependencies": {
     "clean-css": "^4.2.3",
     "sirv-cli": "^0.4.4"
-  }
+  },
+  "keywords": [
+    "svelte",
+    "layercake",
+    "html",
+    "javascript",
+    "svg",
+    "interactive",
+    "graphical",
+    "linear interpolation",
+    "piecewise linear approximation",
+    "function generator",
+    "function editor",
+    "visual programming",
+    "interpolation",
+    "approximation",
+    "curve fitting",
+    "data fitting",
+    "data science"
+  ]
 }

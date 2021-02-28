@@ -1,16 +1,20 @@
-Layer Cake Example
-===
+# ncs-analyzer
 
-This is a starter example for using [Layer Cake](https://layercake.graphics). It sets you up with the line and area chart as seen [in the examples](https://layercake.graphics/Line). It also comes with all the other components from the [guide](https://layercake.graphics) so you can mix and match.
+graphical interactive linear interpolation function generator
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+sample data: Natural Color System (NCS) compared to RGB HSL HSV color systems
 
-```bash
-npx degit mhkeller/layercake-template my-chart
-cd my-chart
-```
+goal: find a piecewise linear approximation of the `ncs2rgb` and `rgb2ncs` function
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+this seems to be the first attempt to find a `rgb2ncs` function ...
+
+the function should be optimized for time (performance) at the cost of size.
+for this, we use only linear interpolation (not quadratic or cubic)
+and we limit the X values to a grid
+so we can find the segment by its index `(X / gridSize)|0`
+and we can avoid binary search
+
+based on [svelte](https://github.com/sveltejs/svelte) and [layercake](https://github.com/mhkeller/layercake-template)
 
 ## Get started
 
