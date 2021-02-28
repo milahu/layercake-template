@@ -14,12 +14,14 @@
 
 	<title>NCS Analyzer</title>
 
-	<link rel='icon' type='image/png' href='/favicon.png'>
-	<link rel='stylesheet' href='/global.css'>
-	<link rel='stylesheet' href='/build/bundle.css?version={version}'>
+	<!--
+	<link rel='icon' type='image/png' href='favicon.png'>
+	-->
+	<link rel='stylesheet' href='global.css'>
+	<link rel='stylesheet' href='build/bundle.css?version={version}'>
 
 	{#if includeJS === true}
-	<script defer src='/build/bundle.js?version={version}'></script>
+	<script defer src='build/bundle.js?version={version}'></script>
 	{/if}
 	{@html head}
 </head>
