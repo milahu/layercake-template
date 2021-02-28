@@ -2,6 +2,14 @@
 
 graphical interactive linear interpolation function generator
 
+this is an early version. in the [demo](https://milahu.github.io/ncs-analyzer/) you can
+
+* pan and zoom the graph
+* move the orange points to fit the interpolation function to the data scatterplot
+* change the `xDomain` between hue, chromaticness and blackness
+* change blackness and chromaticness
+* toggle normalization
+
 sample data: Natural Color System (NCS) compared to RGB HSL HSV color systems
 
 goal: find a piecewise linear approximation of the `ncs2rgb` and `rgb2ncs` function
